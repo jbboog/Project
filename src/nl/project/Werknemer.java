@@ -1,12 +1,15 @@
 package nl.project;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Werknemer {
 
 	private String voornaam;
 	private String achternaam;
-	ArrayList<Slot> diensten = new ArrayList<>(); // simulatie van database
+	private ArrayList<Slot> diensten = new ArrayList<>(); // simulatie van database
+	private static DateTimeFormatter dienstTijdFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy kk:mm");
 	
 	Werknemer (String voornaam, String achternaam) {
 		this.voornaam = voornaam;
@@ -43,6 +46,21 @@ public class Werknemer {
 			}
 		System.out.println("mag niet");
 		return true;
+	}
+	
+	void geefDienstOverzicht () {
+		System.out.println(voornaam + " " + achternaam + " heeft de volgende diensten:");
+		
+		int teller = 1;
+		for (Slot s : diensten) {
+			String afgemaakteDienst = "";
+			if (s.getEind().isBefore(LocalDateTime.now())) {
+				afgemaakteDienst = " (afgemaakt)";
+			}
+			System.out.println("Dienst " + teller + afgemaakteDienst+ ": van: " + s.getBegin().format(dienstTijdFormat) + " tot: " + s.getEind().format(dienstTijdFormat));
+			teller++;
+		}
+		
 	}
 	
 }
