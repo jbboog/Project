@@ -2,6 +2,7 @@ package nl.project.web;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import nl.project.Slot;
+import nl.project.Werknemer;
 
 /**
  * Servlet implementation class IndexServlet
@@ -19,8 +21,8 @@ import nl.project.Slot;
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	static List werknemerList;
-	static List slotList;
+	public static List<Werknemer> werknemerList = new ArrayList<>();
+	public static List<Slot> slotList = new ArrayList<>();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,10 +39,10 @@ public class IndexServlet extends HttpServlet {
 			
 		LocalDateTime beginDateTime = LocalDateTime.parse((String) request.getParameter("begindatum")+ "T" + request.getParameter("begintijd"));
 		LocalDateTime eindDateTime = LocalDateTime.parse((String) request.getParameter("einddatum")+ "T" + request.getParameter("eindtijd"));
+
+		slotList.add(new Slot (beginDateTime, eindDateTime));
 		
-		Slot s1 = new Slot (beginDateTime, eindDateTime);
-		response.getWriter().append("<p>" + beginDateTime);
-		response.getWriter().append("<p>" + eindDateTime);
+		response.sendRedirect("/Project/index.html");
 		
 	}
 

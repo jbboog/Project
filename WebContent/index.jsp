@@ -16,7 +16,8 @@
 		<p><input type="submit" value="Kies slot">
 	</form>
 	
-
+	<p><a href="/Project/werknemerformulier.html">Naar het werknemerformulier</a>
+	<p><a href="/Project/overzicht.html">Naar de overzichtpagina</a>
 
 </body>
 </html>

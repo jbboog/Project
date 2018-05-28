@@ -63,4 +63,15 @@ public class Werknemer {
 		
 	}
 	
+	public String getVoornaam () {
+		return voornaam;
+	}
+	
+	public String getAchternaam () {
+		return achternaam;
+	}
+	
+	public String getNaam () {
+		return voornaam + " " + achternaam;
+	}
 }
