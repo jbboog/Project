@@ -11,12 +11,12 @@ public class Werknemer {
 	private ArrayList<Slot> diensten = new ArrayList<>(); // simulatie van database
 	private static DateTimeFormatter dienstTijdFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy kk:mm");
 	
-	Werknemer (String voornaam, String achternaam) {
+	public Werknemer (String voornaam, String achternaam) {
 		this.voornaam = voornaam;
 		this.achternaam = achternaam;
 	}
 	
-	void voegDienstToe (Slot slot) {
+	public void voegDienstToe (Slot slot) {
 		
 		boolean overlap = false;
 		
@@ -34,7 +34,7 @@ public class Werknemer {
 		}
 	}
 	
-	boolean isErOverlap (Slot slot1, Slot slot2) {
+	public boolean isErOverlap (Slot slot1, Slot slot2) {
 		
 			if (slot2.getEind().isBefore(slot1.getBegin())) {
 				System.out.println("mag wel");
@@ -48,7 +48,7 @@ public class Werknemer {
 		return true;
 	}
 	
-	void geefDienstOverzicht () {
+	public void geefDienstOverzicht () {
 		System.out.println(voornaam + " " + achternaam + " heeft de volgende diensten:");
 		
 		int teller = 1;

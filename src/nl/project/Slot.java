@@ -12,26 +12,26 @@ public class Slot {
 	private static DateTimeFormatter tijdFormat = DateTimeFormatter.ofPattern("kk:mm");
 	
 	
-	Slot (LocalDateTime begin, LocalDateTime eind) {
+	public Slot (LocalDateTime begin, LocalDateTime eind) {
 		slotBegin = begin;
 		slotEind = eind;
 		tijdsduur = Duration.between(slotBegin, slotEind);
 	}
 	
-	int aantalUur () {
+	public int aantalUur () {
 		return (int) tijdsduur.getSeconds()/3600;
 	}
 	
-	String geefInfo () {
+	public String geefInfo () {
 		return "Begint op " + slotBegin.format(tijdFormat) + ", eindigt op " 
 				+ slotEind.format(tijdFormat) + ". Dit slot duurt " + this.aantalUur() + " uur.";
 	}
 	
-	LocalDateTime getBegin() {
+	public LocalDateTime getBegin() {
 		return slotBegin;
 	}
 	
-	LocalDateTime getEind() {
+	public LocalDateTime getEind() {
 		return slotEind;
 	}
 	

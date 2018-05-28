@@ -35,7 +35,7 @@ public class Demo {
 		System.out.println("nu slot 6:");
 		w1.voegDienstToe(slot6);
 		System.out.println("nu slot 7:");
-		w1.voegDienstToe(slot7); // dit zou moeten mogen, maar geeft een fout
+		w1.voegDienstToe(slot7);
 		
 		System.out.println();
 		
