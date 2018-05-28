@@ -2,6 +2,7 @@ package nl.project.web;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,13 +38,20 @@ public class SlotFormulierServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		LocalDateTime beginDateTime = LocalDateTime.parse((String) request.getParameter("begindatum")+ "T" + request.getParameter("begintijd"));
-		LocalDateTime eindDateTime = LocalDateTime.parse((String) request.getParameter("einddatum")+ "T" + request.getParameter("eindtijd"));
-
-		slotList.add(new Slot (beginDateTime, eindDateTime));
-		
-		response.sendRedirect("/Project/index.html");
+		try {
+			LocalDateTime beginDateTime = LocalDateTime.parse((String) request.getParameter("begindatum") + "T" + request.getParameter("begintijd"));
+			LocalDateTime eindDateTime = LocalDateTime.parse((String) request.getParameter("einddatum") + "T" + request.getParameter("eindtijd"));
+			
+			slotList.add(new Slot (beginDateTime, eindDateTime));
+			
+			response.sendRedirect("/Project/index.html");
+		} 
+		catch (DateTimeParseException e) {
+			
+			// TODO: zorg dat de gebruiker een foutmelding te zien krijgt
+			
+			response.sendRedirect("/Project/slotformulier.html");
+		}
 	}
 
 }

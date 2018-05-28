@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Voeg slot toe</title>
+<title>Voeg een slot toe</title>
 </head>
 <body>
 
 <p><h2>Kies een slot:</h2>
+
+	
+
 	<form method="post" action="">
 		<p>Begindatum en -tijd: <input type="date" name="begindatum"> <input type="time" name="begintijd">
 		<p>Einddatum en -tijd: <input type="date" name="einddatum"> <input type="time" name="eindtijd">

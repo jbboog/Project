@@ -10,10 +10,9 @@
 <h1>Roosterplanning</h1>
 
 
-	
 	<p><a href="/Project/werknemerformulier.html">Naar het werknemerformulier</a>
-	<p><a href="/Project/overzicht.html">Naar de overzichtpagina</a>
 	<p><a href="/Project/slotformulier.html">Naar het slotformulier</a>
+	<p><a href="/Project/overzicht.html">Naar de overzichtpagina</a>
 
 </body>
 </html>
