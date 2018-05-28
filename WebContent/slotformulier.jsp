@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Voeg een werknemer toe</title>
+<title>Voeg slot toe</title>
 </head>
 <body>
-<h1>Roosterplanning</h1>
 
-<p><h2>Voeg een werknemer toe:</h2>
+<p><h2>Kies een slot:</h2>
 	<form method="post" action="">
-		<p>Voornaam: <input type="text" name="voornaam">
-		<p>Achernaam: <input type="text" name="achternaam">
-		<p><input type="submit" value="Voeg werknemer toe">
+		<p>Begindatum en -tijd: <input type="date" name="begindatum"> <input type="time" name="begintijd">
+		<p>Einddatum en -tijd: <input type="date" name="einddatum"> <input type="time" name="eindtijd">
+		<p><input type="submit" value="Kies slot">
 	</form>
 
 <p><a href="/Project/index.html">Terug naar de beginpagina</a>

@@ -1,7 +1,6 @@
 package nl.project.web;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,12 +36,7 @@ public class IndexServlet extends HttpServlet {
 
 	protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-		LocalDateTime beginDateTime = LocalDateTime.parse((String) request.getParameter("begindatum")+ "T" + request.getParameter("begintijd"));
-		LocalDateTime eindDateTime = LocalDateTime.parse((String) request.getParameter("einddatum")+ "T" + request.getParameter("eindtijd"));
-
-		slotList.add(new Slot (beginDateTime, eindDateTime));
 		
-		response.sendRedirect("/Project/index.html");
 		
 	}
 

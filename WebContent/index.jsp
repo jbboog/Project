@@ -9,15 +9,11 @@
 <body>
 <h1>Roosterplanning</h1>
 
-<p><h2>Kies een slot:</h2>
-	<form method="post" action="">
-		<p>Begindatum en -tijd: <input type="date" name="begindatum"> <input type="time" name="begintijd">
-		<p>Einddatum en -tijd: <input type="date" name="einddatum"> <input type="time" name="eindtijd">
-		<p><input type="submit" value="Kies slot">
-	</form>
+
 	
 	<p><a href="/Project/werknemerformulier.html">Naar het werknemerformulier</a>
 	<p><a href="/Project/overzicht.html">Naar de overzichtpagina</a>
+	<p><a href="/Project/slotformulier.html">Naar het slotformulier</a>
 
 </body>
 </html>

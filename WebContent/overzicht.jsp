@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="nl.project.*, static nl.project.web.IndexServlet.slotList"%>
+    pageEncoding="UTF-8" import="nl.project.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,7 +18,7 @@
 <h1>Slots:</h1>
 
 	<ul>
-	<% for (Slot s :  slotList) { %>
+	<% for (Slot s :  nl.project.web.IndexServlet.slotList) { %>
 		<li><%= s.geefInfo()%></li>
 	<% } %>
 	</ul>
